@@ -32,8 +32,7 @@ const CardCreation = () => {
         name: formData.locationName,
         latitude: data.latitude,
         longitude: data.longitude,
-        temperature: data.current_weather.temperature,
-        windspeed: data.current_weather.windspeed,
+        current_weather: data.current_weather,
         image: urlImage,
       };
       setTarjeta([...tarjeta, locationNew])

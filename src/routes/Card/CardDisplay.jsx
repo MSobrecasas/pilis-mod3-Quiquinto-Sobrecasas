@@ -5,9 +5,10 @@ import './CardDisplay.css';
 
 const CardDisplay = () => {
   const { id } = useParams();
-  const { locations } = useContext(LocationContext);
-  const [location] = locations.filter((location) => location.id === Number(id));
-  
+  const { tarjeta } = useContext(LocationContext);
+  console.log(tarjeta);
+  const [location] = tarjeta.filter((location) => location.id === Number(id));
+  console.log(location);
   return (
     <div className='location-display-container'>
       <div className='location-display-card'>
