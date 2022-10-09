@@ -1,0 +1,52 @@
+.location-display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+    
+.location-display-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  padding: 20px;
+}
+    
+.location-display-name {
+  margin-bottom: 10px;
+}
+
+.location-display-latitude {
+  margin-bottom: 10px;
+}
+  
+.location-display-longitude {
+  margin-bottom: 10px;
+}
+
+.location-display-temperature {
+  margin-bottom: 10px;
+}
+  
+.location-display-windspeed {
+  margin-bottom: 10px;
+}
+  
+.btn-back {
+  margin-top: 30px;
+  width: 200px;
+  text-decoration: none;
+  border: 1px solid #e9e9e9;
+  padding: 10px;
+  border-radius: 5px;
+  color: #000;
+}
+  
+.btn-back:hover {
+  cursor: pointer;
+  background-color: rgb(37, 37, 37);
+  color: #fff;
+}
