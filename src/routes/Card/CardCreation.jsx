@@ -8,8 +8,7 @@ import './CardCreation.css';
 const CardCreation = () => {
   const { tarjeta, setTarjeta } = useContext(LocationContext) //context
   const navigate = useNavigate();
-  const urlImage = "https://tse4.mm.bing.net/th?id=OIP.GsThrr3bJH2T4zlTK-8eEQHaEK&pid=Api&P=0";
-
+  
   const {
     register,
     handleSubmit,
@@ -33,7 +32,9 @@ const CardCreation = () => {
         latitude: data.latitude,
         longitude: data.longitude,
         current_weather: data.current_weather,
-        image: urlImage,
+        daily: data.daily,
+        imagen: formData.imagen,
+        deleted : false
       };
       setTarjeta([...tarjeta, locationNew])
       navigate('/')
@@ -70,6 +71,14 @@ const CardCreation = () => {
           })}
         />
         <p>{errors.locationlongitude?.message}</p>
+        <input
+          type="text"
+          placeholder="Ingresar URL de imagen"
+          {...register("imagen", {
+            required: "Ingresar URL de imagen",
+          })}
+        />
+        <p>{errors.imagen?.message}</p>
         <button className='btn-form' type='submit'>
           Crear Ubicación
         </button>

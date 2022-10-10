@@ -10,3 +10,13 @@
   margin-top: 80px;
   font-size: 18px;
 }
+
+.img__container{
+  border-radius: 5px;
+  padding: 0;
+  margin: 1rem 0;
+}
+.weather__img{
+  width:80%;
+  border-radius: 5px;
+}

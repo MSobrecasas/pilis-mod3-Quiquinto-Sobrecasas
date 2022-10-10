@@ -1,52 +1,79 @@
-.location-display-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 50px;
-}
-    
-.location-display-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 400px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  border-radius: 5px;
-  padding: 20px;
-}
-    
-.location-display-name {
-  margin-bottom: 10px;
+.forecast__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 2rem;
 }
 
-.location-display-latitude {
-  margin-bottom: 10px;
-}
+.current__weather {
+  margin: 0;
+  padding: 0 2rem;
   
-.location-display-longitude {
-  margin-bottom: 10px;
+}
+.titles__container{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  border-bottom: 2px solid var(--primary-color);
+  padding: 0;
+}
+.title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: left;
+  padding: 0.5rem 3rem;
+  margin: 0;
 }
 
-.location-display-temperature {
-  margin-bottom: 10px;
+.subtitle {
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: left;
+  font-weight: 400;
 }
-  
-.location-display-windspeed {
-  margin-bottom: 10px;
+
+.subtitle small {
+  padding-left: 3rem;
 }
-  
-.btn-back {
-  margin-top: 30px;
-  width: 200px;
-  text-decoration: none;
-  border: 1px solid #e9e9e9;
-  padding: 10px;
+
+.data {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: center;
+  margin: 0;
+  padding:  2rem 0;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.temp__icon {
+  color: var(--secondary-color);
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.temp {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.img__container {
   border-radius: 5px;
-  color: #000;
+  overflow: hidden;
+  height: 300px;
+  margin: auto;
+  padding: 0;
+  width:fit-content;
 }
-  
-.btn-back:hover {
-  cursor: pointer;
-  background-color: rgb(37, 37, 37);
-  color: #fff;
+
+.img__container:hover .image {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.image {
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
 }

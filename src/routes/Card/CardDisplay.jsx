@@ -1,28 +1,72 @@
-import { useContext } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { LocationContext } from '../../contexts/LocationContext';
-import './CardDisplay.css';
+import { useContext, useState } from "react";
+import { useParams, Link } from "react-router-dom";
+import { LocationContext } from "../../contexts/LocationContext";
+import "./CardDisplay.css";
+import WeatherForecast from "../../components/location/WeatherForecast";
+import WeatherIcon from "../../components/location/WeatherIcon";
+import { FaWind } from "react-icons/fa";
 
 const CardDisplay = () => {
   const { id } = useParams();
   const { tarjeta } = useContext(LocationContext);
-  console.log(tarjeta);
-  const [location] = tarjeta.filter((location) => location.id === Number(id));
-  console.log(location);
+  const [weather] = tarjeta.filter((weather) => weather.id === Number(id));
+  console.log("detalles " + JSON.stringify(weather));
+
+  const [forecasts, setForecasts] = useState([]);
+
+  const setForecast = (forecastData) => {
+    for (let i = 0; i < 7; i++) {
+      const forecastNew = {
+        id: i,
+        temp_max: forecastData.temperature_2m_max[i],
+        temp_min: forecastData.temperature_2m_min[i],
+        time: forecastData.time[i],
+        weathercode: forecastData.weathercode[i],
+      };
+      forecasts[i] = forecastNew;
+    }
+    console.log("icon"+weather.current_weather.weathercode);
+  };
+
   return (
-    <div className='location-display-container'>
-      <div className='location-display-card'>
-        <h1 className='location-display-id'>{location.id}</h1>
-        <h1 className='location-display-name'>{location.name}</h1>
-        <h1 className='location-display-latitude'>{location.latitude}</h1>
-        <h1 className='location-display-longitude'>{location.longitude}</h1>
-        <h1 className='location-display-temperature'>{location.current_weather.temperature}</h1>
-        <h1 className='location-display-windspeed'>{location.current_weather.windspeed}</h1>
+    <section className="weather__details__container ">
+      <div className="current__weather ">
+        <div className="titles__container">
+          <h1 className="title ">{weather.name}</h1>
+          <div className="subtitle">
+            <small>Latitud: {weather.latitude}</small>
+            <small>Longitud {weather.longitude}</small>
+          </div>
+        </div>
+
+        <div className="data ">
+          <div className="temp__icon">
+            <h2 className="temp ">{weather.current_weather.temperature}°</h2>
+            <h2>
+              <WeatherIcon iconCode={weather.current_weather.weathercode} />
+            </h2>
+            <h2 className="windspeed">
+              <FaWind />
+              {weather.current_weather.windspeed} km/h
+            </h2>
+          </div>
+          <div className="">
+            <div className="img__container">
+              <img className="image " src={weather.imagen} alt="" />
+            </div>
+          </div>
+        </div>
       </div>
-      <Link className='btn-back' to='/'>
+      {setForecast(weather.daily)}
+      <div className="forecast__container">
+        {forecasts.map((forecast) => (
+          <WeatherForecast key={forecast.id} forecast={forecast} />
+        ))}
+      </div>
+      <Link className="btn-back" to="/">
         Volver al Inicio
       </Link>
-    </div>
-  ) 
-}
-export default CardDisplay; 
+    </section>
+  );
+};
+export default CardDisplay;

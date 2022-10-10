@@ -1,9 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
+:root{
+  --primary-color: #FE7878;
+  --primary-color-lighter: #FFC5C5;
+  --primary-color-darker: red;
+  --secondary-color: #5AC3FF;
+  --secondary-color-lighter: #B3DAF1;
+  --secondary-color-darker: #0484CD;
+}
+
 * {
   font-family: 'Comfortaa';
   margin: 0;
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  transition:all .5s ease-in-out;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary-color-lighter);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color-darker);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.border {
+  border: 1px solid green;
 }
