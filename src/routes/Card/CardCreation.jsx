@@ -27,7 +27,7 @@ const CardCreation = () => {
     getClima(formData.locationlatitude,formData.locationlongitude)
     .then((data) => {
       const locationNew = {
-        id: tarjeta.length + 1,
+        id: tarjeta[tarjeta.length - 1].id + 1,
         name: formData.locationName,
         latitude: data.latitude,
         longitude: data.longitude,

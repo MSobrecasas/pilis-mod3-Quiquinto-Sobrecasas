@@ -3,6 +3,7 @@ import { useEffect, useContext, useState } from "react";
 import { LocationContext } from "../../contexts/LocationContext";
 import { Link } from "react-router-dom";
 import "./location.css";
+import Swal from "sweetalert2";
 
 import WeatherIcon from "./WeatherIcon";
 
@@ -13,14 +14,25 @@ const Location = ({ location }) => {
   /* Eliminar tarjeta */
   const handleLocation = () => {
     //Quitar tarjeta
-    setTarjeta(
-      tarjeta.filter((loc) => loc.id !== id) //!==
-    );
+    /*   //!==
+     */
+    Swal.fire({
+      title: "Desea borrar el registro?",
+      text: "Seguro?",
+      icon: "error",
+      showDenyButton: true,
+      denyButtonText: "NO",
+      confirmButtonText: "SI",
+      confirmButtonColor: "#00FF00",
+    }).then((response) => {
+      if (response.isConfirmed) {
+        setTarjeta(tarjeta.filter((loc) => loc.id !== id));
+        Swal.fire("Registro borrado", "Exito", "success");
+      } else {
+        Swal.fire("Información", "Operacion Cancelada", "info");
+      }
+    });
   };
-
-  console.log("code location");
-  console.log(current_weather.weathercode);
-  console.log(typeof current_weather.weathercode === "number");
 
   return (
     <div className="location-container">
