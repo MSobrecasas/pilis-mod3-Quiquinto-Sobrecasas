@@ -8,6 +8,5 @@ export const LocationContext = createContext({
 export const LocationProvider = ({ children}) => {
   const [tarjeta, setTarjeta] = useState ([]);
   const value = { tarjeta, setTarjeta };
-  console.log(" contexto " + JSON.stringify(tarjeta));
   return <LocationContext.Provider value={value}>{children}</LocationContext.Provider>;
 } 

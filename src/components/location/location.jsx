@@ -7,8 +7,7 @@ import "./location.css";
 import WeatherIcon from "./WeatherIcon";
 
 const Location = ({ location }) => {
-  const { id, name, latitude, longitude, current_weather, imagen } =
-    location;
+  const { id, name, latitude, longitude, current_weather, imagen } = location;
   const { tarjeta, setTarjeta } = useContext(LocationContext);
 
   /* Eliminar tarjeta */
@@ -19,6 +18,10 @@ const Location = ({ location }) => {
     );
   };
 
+  console.log("code location");
+  console.log(current_weather.weathercode);
+  console.log(typeof current_weather.weathercode === "number");
+
   return (
     <div className="location-container">
       <div className="location-tarjeta">Tarjeta: {id}</div>
@@ -26,7 +29,9 @@ const Location = ({ location }) => {
         <h3>
           <span>Lugar: {name}</span>
         </h3>
-        <WeatherIcon iconCode={current_weather.weathercode} />
+        <div className="icon__display">
+          <WeatherIcon iconCode={current_weather.weathercode} />
+        </div>
         <h3>
           <span>Latitud: {latitude}</span>
         </h3>

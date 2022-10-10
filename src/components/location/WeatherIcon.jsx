@@ -11,13 +11,13 @@ import {
 import "./WeatherIcon.css";
 
 const WeatherIcon = ({ iconCode }) => {
-  console.log(iconCode);
   return setIcono(iconCode);
 };
 
 export default WeatherIcon;
 
 let setIcono = (iconImg) => {
+  if (iconImg == 0)  iconImg = 1;// por alguna razon no reconoce el 0
   switch (iconImg) {
     case (95, 96, 99):
       return (

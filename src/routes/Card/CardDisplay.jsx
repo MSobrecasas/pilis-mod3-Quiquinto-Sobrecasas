@@ -30,7 +30,7 @@ const CardDisplay = () => {
 
   return (
     <section className="weather__details__container ">
-      <div className="current__weather ">
+      <div className="current__weather">
         <div className="titles__container">
           <h1 className="title ">{weather.name}</h1>
           <div className="subtitle">
@@ -39,7 +39,7 @@ const CardDisplay = () => {
           </div>
         </div>
 
-        <div className="data ">
+        <div className="data">
           <div className="temp__icon">
             <h2 className="temp ">{weather.current_weather.temperature}°</h2>
             <h2>
@@ -50,11 +50,9 @@ const CardDisplay = () => {
               {weather.current_weather.windspeed} km/h
             </h2>
           </div>
-          <div className="">
             <div className="img__container">
               <img className="image " src={weather.imagen} alt="" />
             </div>
-          </div>
         </div>
       </div>
       {setForecast(weather.daily)}

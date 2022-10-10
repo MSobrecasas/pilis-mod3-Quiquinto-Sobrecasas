@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 2rem;
+  gap: 4.5rem;
+  padding: 0 3rem;
 }
 
 .current__weather {
@@ -37,18 +39,18 @@
 
 .data {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 1fr 2fr;
   align-items: center;
   margin: 0;
-  padding:  2rem 0;
+  padding:  2rem 3rem;
   border-bottom: 2px solid var(--primary-color);
 }
 
 .temp__icon {
   color: var(--secondary-color);
-  align-items: center;
   margin: 0;
   padding: 0;
+  float: left;
 }
 
 .temp {
@@ -64,6 +66,7 @@
   margin: auto;
   padding: 0;
   width:fit-content;
+  right: 0;
 }
 
 .img__container:hover .image {
