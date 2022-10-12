@@ -11,7 +11,6 @@ const CardDisplay = () => {
   const { locations } = useContext(LocationContext);
   const [weather] = locations.filter((weather) => weather.id === Number(id));
 
-
   const [forecasts, setForecasts] = useState([]);
 
   const setForecast = (forecastData) => {
@@ -38,8 +37,8 @@ const CardDisplay = () => {
           </div>
         </div>
 
-        <div className="data">
-          <div className="temp__icon">
+        <div className="data ">
+          <div className="temp__icon ">
             <h2 className="temp ">{weather.current_weather.temperature}°</h2>
             <h2>
               <WeatherIcon iconCode={weather.current_weather.weathercode} />
@@ -49,9 +48,9 @@ const CardDisplay = () => {
               {weather.current_weather.windspeed} km/h
             </h2>
           </div>
-            <div className="img__container">
-              <img className="image " src={weather.imagen} alt="" />
-            </div>
+          <div className="img__container">
+            <img className="image " src={weather.imagen} alt="" />
+          </div>
         </div>
       </div>
       {setForecast(weather.daily)}

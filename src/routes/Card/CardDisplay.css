@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 2rem;
-  gap: 4.5rem;
+  gap: 4rem;
   padding: 0 3rem;
 }
 
@@ -13,7 +13,7 @@
 }
 .titles__container{
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 55% 45%;
   align-items: center;
   border-bottom: 2px solid var(--primary-color);
   padding: 0;
@@ -22,19 +22,20 @@
   font-size: 2.5rem;
   color: var(--primary-color);
   text-align: left;
-  padding: 0.5rem 3rem;
+  padding: 0.5rem 2.5rem;
   margin: 0;
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-style: italic;
-  text-align: left;
+  text-align: right;
   font-weight: 400;
+  padding-right: 2.5rem;
 }
 
 .subtitle small {
-  padding-left: 3rem;
+  padding-left: 1rem;
 }
 
 .data {
@@ -79,4 +80,114 @@
   margin: 0;
   padding: 0;
   border-radius: 5px;
+}
+
+
+ .border{
+  border: 1px solid black;
+ }
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .titles__container{
+    grid-template-columns: 50% 50%;
+  }
+  .title{
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
+  .subtitle {
+    text-align: right;
+    font-size: 1.1rem;
+    padding-right: 1rem ;
+  }
+  .subtitle small {
+    padding-left:1rem;
+  }
+  .forecast__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 2rem;
+    gap: 2rem;
+    padding: 0 3rem;
+  }
+  .data {
+    padding:  2rem 1rem;
+  }
+
+  .temp {
+    font-size: 2rem;
+  }
+
+  .windspeed{
+    font-size: 1rem;
+  }
+
+  .temp__icon h2 .weather__icon__icon{
+    font-size: 2rem;
+    }
+
+    .img__container {
+      height: 200px;
+      margin: auto;
+    }
+    
+    .image {
+      height: 200px;
+    }
+}
+@media screen and (min-width: 280px) and (max-width: 767px) {
+  .titles__container{
+    grid-template-columns: 1fr;
+  }
+  .title{
+    font-size: 2rem;
+    margin: auto;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 1rem ;
+  }
+  .subtitle small {
+    padding-left:1rem;
+  }
+  .forecast__container {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 2rem;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  .data {
+    grid-template-columns: 1fr;
+    padding: 1rem 0;
+
+  }
+
+  .temp {
+    font-size: 2rem;
+  }
+
+  .temp__icon{
+    padding-bottom: 2rem;
+  }
+  .windspeed{
+    font-size: 1rem;
+  }
+
+  .temp__icon h2 .weather__icon__icon{
+    font-size: 2rem;
+    }
+
+    .img__container {
+      width: 300px;
+      height: 200px;
+      margin: auto;
+    }
+    
+    .image {
+      width: 300px;
+      height: 200px;
+      margin: auto;
+    }
 }
