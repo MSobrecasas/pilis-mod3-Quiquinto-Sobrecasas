@@ -1,54 +1,70 @@
 .location-container {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid grey; */
-  border-radius: 30px;
-  padding: 10px;
-  background-color: #ffffff;
+  border-radius: 15px;
+  height: 340px;
+  width: 280px;
+  box-shadow: inset 0 0 10px 2px var(--primary-color-lighter);
 }
 
 .location {
   display: flex;
-  font-size: 9px;
-  margin-top: -10px;
+  font-size: 11px;
+  margin-top: 0px;
   flex-direction: column;
-  background-color: #ffffff;
   justify-content: center;
-  letter-spacing: 3px;
-  height: 450px;
-  border: 1px solid #B9FFF8;
+  height: 340px;
+  width: 280px;
   padding: 1rem 0;
+  margin: 0rem;
 }
 
-.location-tarjeta {
-  background-color: #B9FFF8;
-  min-width: 165px;
+.name {
   width: auto;
-  height: 50px;
-  letter-spacing: 0.5px;
-  line-height: 50px;
+  height: 10px;
   padding: 0 35px 0 35px;
-  font-size: 18px;
-  border-radius: 10px;
-  color: grey;
-  font-weight: bolder;
-  border: none;
-  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  /* font-style: italic; */
   justify-content: center;
-  margin-top: 0px;
-}
+  margin-top: 2px;
+  font-weight:bold;
+  color: var(--primary-color-darker);
+} 
 
 .url-image{
   width: auto;
-  height: 180px;
+  height: 100px;
+}
+
+.icon__display{
+  height: 90px;
+}
+
+.temperatura{
+  font-size: 18px;
+  font-weight:bold;
+  margin-bottom: 6px;
+  color: var(--primary-color-darker);
 }
 
 h3 {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight:600;
 }
 
-.del:hover {
+.location-actions{
+  display: grid;
+}
+
+.delete{
+  display:flex;
+  width: 280px;
+  padding: 0px 0px 0px 230px;
+}
+
+.delete:hover {
   cursor: pointer;
-  height: 30px;
+  height: 23px;
 }
-

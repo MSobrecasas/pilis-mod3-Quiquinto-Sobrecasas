@@ -12,7 +12,9 @@ const WeatherForecast = ({ forecast }) => {
       </div>
       <h2>Max {temp_max}°</h2>
       <h2>Min {temp_min}°</h2>
-      <h2>Dia {time}</h2>
+      <div className="dia">
+        <h2>Dia {time}</h2>
+      </div>
     </article>
   );
 };

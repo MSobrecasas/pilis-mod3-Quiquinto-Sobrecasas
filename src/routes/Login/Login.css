@@ -30,7 +30,6 @@
     line-height: 50px;
     padding: 0 35px 0 35px;
     font-size: 15px;
-    background-color: #FF9551;
     border-radius: 30px;
     color: white;
     font-weight: bolder;
@@ -39,4 +38,6 @@
     display: flex;
     justify-content: center;
     margin-top: 25px;
+    background-color: var(--secondary-color-darker);
+    font-weight:700;
 } 

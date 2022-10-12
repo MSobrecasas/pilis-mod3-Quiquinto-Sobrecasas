@@ -2,12 +2,19 @@
 
 :root{
   --primary-color: #FE7878;
-  --primary-color-lighter: #FFC5C5;
-  --primary-color-darker: red;
-  --secondary-color: #5AC3FF;
+  --primary-color-lighter: #d2dbdc;
+  --primary-color-darker: #F90716;
+  --secondary-color: #545454;
   --secondary-color-lighter: #B3DAF1;
-  --secondary-color-darker: #0484CD;
+  --secondary-color-darker: #04acec;
 }
+
+/* #545454
+#d2dbdc
+#04acec 
+#6cccd4
+B20600
+ */
 
 * {
   font-family: 'Comfortaa';
