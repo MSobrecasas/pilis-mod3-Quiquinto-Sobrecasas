@@ -6,7 +6,7 @@ import { getClima } from "../../service";
 import "./CardCreation.css";
 
 const CardCreation = () => {
-  const { tarjeta, setTarjeta } = useContext(LocationContext); //context
+  const { locations, setTarjeta } = useContext(LocationContext); //context
   const navigate = useNavigate();
 
   const {
@@ -35,11 +35,10 @@ const CardCreation = () => {
           imagen: formData.imagen,
           deleted: false,
         };
-        if (tarjeta.length != 0) {
-         locationNew.id = tarjeta[tarjeta.length -1 ].id + 1;
-         console.log("entra")
+        if (locations.length !== 0) {
+         locationNew.id = locations[locations.length -1 ].id + 1;
         }
-        setTarjeta([...tarjeta, locationNew]);
+        setTarjeta([...locations, locationNew]);
         navigate("/");
       })
       .catch((err) => console.log(err));

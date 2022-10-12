@@ -9,7 +9,7 @@ import WeatherIcon from "./WeatherIcon";
 
 const Location = ({ location }) => {
   const { id, name, latitude, longitude, current_weather, imagen } = location;
-  const { tarjeta, setTarjeta } = useContext(LocationContext);
+  const { locations, setTarjeta } = useContext(LocationContext);
 
   /* Eliminar tarjeta */
   const handleLocation = () => {
@@ -26,7 +26,7 @@ const Location = ({ location }) => {
       confirmButtonColor: "#00FF00",
     }).then((response) => {
       if (response.isConfirmed) {
-        setTarjeta(tarjeta.filter((loc) => loc.id !== id));
+        setTarjeta(locations.filter((loc) => loc.id !== id));
         Swal.fire("Registro borrado", "Exito", "success");
       } else {
         Swal.fire("Información", "Operacion Cancelada", "info");

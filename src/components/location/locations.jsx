@@ -2,22 +2,26 @@ import Location from "./location";
 import "./locations.css";
 import { LocationContext } from "../../contexts/LocationContext";
 import { useContext } from "react";
+import { FiltersContext } from "../../contexts/FiltersContext";
+import { useEffect, useState } from "react";
 
-const Locations = ({}) => {
-  const locations = useContext(LocationContext);  
-  console.log("dashboiard Vale" + JSON.stringify(locations));
-  console.log("dashboiard le Vale: " + locations.tarjeta.length);
-  
-  
-  const locationsCopy = locations;
-  console.log("copy "+ JSON.stringify( locationsCopy))
-  //const { tarjeta, setTarjeta } = useContext(LocationContext)
+const Locations = () => {
+  const { locations } = useContext(LocationContext);
+  const { filters, setFilters } = useContext(FiltersContext);
+
+  //console.log("dashboiard Vale " + JSON.stringify(locations));
+  //console.log("dashboiard le Vale : " + locations.length);
+
+const filteredLocations = locations.filter((location) =>{
+   if(filters.filter === ''){
+    return true
+   } 
+    return location.name.toLowerCase().includes(filters.filter.toLowerCase())
+})
+
   let handleChange = (e) => {
-     const search = e.target.value;
-    console.log(e.target.value)
-   /*  setTarjeta(locationsCopy.tarjeta.filter((location) => {
-     location.name.toLowerCase().includes(search.toLowerCase());
-    }) ) */
+    const search = e.target.value;
+    setFilters({...filters, filter : search})
   };
 
   return (
@@ -26,12 +30,12 @@ const Locations = ({}) => {
         <input
           type="text"
           placeholder="Ingresar ciudad"
-          onChange={e =>handleChange(e)}
+          onChange={(e) => handleChange(e)}
         />
       </div>
       <div className="grid">
-        {locations.tarjeta.length > 0 ? (
-          locations.tarjeta.map((location) => (
+        {filteredLocations.length > 0 ? (
+          filteredLocations.map((location) => (
             <Location key={location.id} location={location} />
           ))
         ) : (

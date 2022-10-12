@@ -1,12 +1,12 @@
 import { createContext, useState } from "react";
 
 export const LocationContext = createContext({
-  tarjeta: [], 
+  locations: [], 
   setTarjeta: () => {}
 })
 
 export const LocationProvider = ({ children}) => {
-  const [tarjeta, setTarjeta] = useState ([]);
-  const value = { tarjeta, setTarjeta };
+  const [locations, setTarjeta] = useState ([]);
+  const value = { locations, setTarjeta };
   return <LocationContext.Provider value={value}>{children}</LocationContext.Provider>;
 } 

@@ -8,9 +8,9 @@ import { FaWind } from "react-icons/fa";
 
 const CardDisplay = () => {
   const { id } = useParams();
-  const { tarjeta } = useContext(LocationContext);
-  const [weather] = tarjeta.filter((weather) => weather.id === Number(id));
-  console.log("detalles " + JSON.stringify(weather));
+  const { locations } = useContext(LocationContext);
+  const [weather] = locations.filter((weather) => weather.id === Number(id));
+
 
   const [forecasts, setForecasts] = useState([]);
 
@@ -25,7 +25,6 @@ const CardDisplay = () => {
       };
       forecasts[i] = forecastNew;
     }
-    console.log("icon"+weather.current_weather.weathercode);
   };
 
   return (

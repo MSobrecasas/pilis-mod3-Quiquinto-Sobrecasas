@@ -7,16 +7,19 @@ import { BrowserRouter } from 'react-router-dom'; //
 import { UserProvider } from './contexts/UserContext';
 import { LocationProvider } from './contexts/LocationContext';
 //import { EliminarProvider } from './contexts/EliminarContext';
+import { FiltersProvider } from './contexts/FiltersContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <UserProvider>
-          <LocationProvider>
+        <LocationProvider>
+          <FiltersProvider>
             <App />
-          </LocationProvider>
-        </UserProvider>
+          </FiltersProvider>
+        </LocationProvider>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
