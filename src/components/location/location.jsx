@@ -36,22 +36,22 @@ const Location = ({ location }) => {
 
   return (
     <div className="location-container">
-      <div className="location-tarjeta">Tarjeta: {id}</div>
+      {/* <div className="location-tarjeta">Tarjeta: {id}</div> */}
       <div className="location">
-        <h3>
-          <span>Lugar: {name}</span>
-        </h3>
+        <div className="name">
+          <span>{name}</span>  
+        </div>
         <div className="icon__display">
-          <WeatherIcon iconCode={current_weather.weathercode} />
+          <WeatherIcon iconCode={current_weather.weathercode} />   
+        </div>
+        <div className="temperatura">
+          <span>{current_weather.temperature}°</span>    
         </div>
         <h3>
           <span>Latitud: {latitude}</span>
         </h3>
         <h3>
           <span>Longitud: {longitude}</span>
-        </h3>
-        <h3>
-          <span>Temperatura: {current_weather.temperature}</span>
         </h3>
         <h3>
           <span>Velocidad del Viento: {current_weather.windspeed}</span>
@@ -64,10 +64,10 @@ const Location = ({ location }) => {
         <Link className="btn-see-more" to={`/location/${id}`}>
           Ver más
         </Link>
-        <div className="del" onClick={handleLocation}>
+        <div className="delete" onClick={handleLocation}>
           {/* podrimos mostrar un mensaje */}
           <GoTrashcan />
-        </div>
+        </div>        
       </div>
     </div>
   );

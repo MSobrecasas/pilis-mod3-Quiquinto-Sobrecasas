@@ -8,19 +8,20 @@
 
 .current__weather {
   margin: 0;
-  padding: 0 2rem;
-  
+  padding: 0 2rem;  
 }
+
 .titles__container{
   display: grid;
   grid-template-columns: 55% 45%;
   align-items: center;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color-darker);
   padding: 0;
 }
+
 .title {
-  font-size: 2.5rem;
-  color: var(--primary-color);
+  font-size: 2.3rem;
+  color: var(--primary-color-darker);
   text-align: left;
   padding: 0.5rem 2.5rem;
   margin: 0;
@@ -44,7 +45,7 @@
   align-items: center;
   margin: 0;
   padding:  2rem 3rem;
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color-darker);
 }
 
 .temp__icon {
@@ -55,7 +56,7 @@
 }
 
 .temp {
-  font-size: 3rem;
+  font-size: 4rem;
   margin: 0;
   padding: 0;
 }

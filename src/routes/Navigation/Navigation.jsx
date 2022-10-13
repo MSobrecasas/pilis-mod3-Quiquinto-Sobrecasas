@@ -3,11 +3,13 @@ import { Link, Outlet } from 'react-router-dom';
 import { UserContext } from '../../contexts/UserContext';
 import palettoLogo from '../../assets/logo.png';
 import './Navigation.css';
+import { useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
   const { currentUser, setCurrentUser } = useContext(UserContext);
+  const navigate = useNavigate()
 
-   /* Local Storage */
+  /* Local Storage */
   useEffect(() => {
     const userStored = localStorage.getItem('currentUser')
     console.log({userStored})
@@ -18,6 +20,8 @@ const Navigation = () => {
 
   const handleSignOut = () => {
     setCurrentUser(null);
+    localStorage.clear();
+    navigate('/')
   };
 
   return (
@@ -26,29 +30,29 @@ const Navigation = () => {
       <Link className='logo-container' to='/'>
         <img src={palettoLogo} alt='Logo' className='logo' />
       </Link>
-      <div className='nav-links-container'>
+      <div className='nav-links-container'> 
         {currentUser ? (
-          <Link className='nav-link' to='/location/create'>
-            Nueva Ubiación
+          <Link className='nav-link-habilitado' to='/location/create'>
+          Nueva Ubiación
           </Link>
-        ) : (
-          <span className='nav-link'>Nueva Ubicación</span>
+        ) : ( 
+          <span className='nav-link-deshabilitado'>Nueva Ubicación</span>
         )}
-
+        
         {currentUser ? (
-          <span className='nav-link' onClick={handleSignOut}>
+          <span className='nav-link-cerar' onClick={handleSignOut}>
             Cerrar Sesión
-          </span>
+          </span> 
         ) : (
           <Link className='nav-link sign-in' to='/login'>
             Iniciar Sesión
-          </Link>
+          </Link>  
         )}
       </div>
     </div>
     <Outlet/>
   </>
-);
+  );
 };
   
 export default Navigation;
