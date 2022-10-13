@@ -17,19 +17,19 @@ const Location = ({ location }) => {
     /*   //!==
      */
     Swal.fire({
-      title: "Desea borrar el registro?",
-      text: "Seguro?",
+      title: "¿Desea borrar el registro?",
+      text: "",
       icon: "error",
       showDenyButton: true,
       denyButtonText: "NO",
       confirmButtonText: "SI",
-      confirmButtonColor: "#00FF00",
+      confirmButtonColor: "#1CC805",
     }).then((response) => {
       if (response.isConfirmed) {
         setTarjeta(locations.filter((loc) => loc.id !== id));
         Swal.fire("Registro borrado", "Exito", "success");
       } else {
-        Swal.fire("Información", "Operacion Cancelada", "info");
+        Swal.fire("Operacion Cancelada","", "info");
       }
     });
   };

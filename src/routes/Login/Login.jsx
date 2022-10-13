@@ -29,7 +29,7 @@ const Login = () => {
             }
           )
         } />
-        <p>{errors.username?.message}</p>
+        <p className="errors__show">{errors.username?.message}</p>
         <input
           className='input-form'
           type='password'
@@ -42,7 +42,7 @@ const Login = () => {
             )
           }
         />
-        <p>{errors.password?.message}</p>
+        <p className="errors__show">{errors.password?.message}</p>
          <button className='btn-form' type='submit'>Iniciar Sesión</button>
       </form>
     </div>

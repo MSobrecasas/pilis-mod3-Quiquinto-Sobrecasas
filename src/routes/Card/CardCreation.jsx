@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { LocationContext } from "../../contexts/LocationContext";
 import { getClima } from "../../service";
 import "./CardCreation.css";
-
+import Swal from "sweetalert2";
 const CardCreation = () => {
   const { locations, setTarjeta } = useContext(LocationContext); //context
   const navigate = useNavigate();
@@ -18,8 +18,28 @@ const CardCreation = () => {
   });
 
   const onSubmit = (data) => {
-    getAux(data);
-    navigate("/");
+
+    Swal.fire({
+      title: "¿Desea guardar el registro?",
+      text: "",
+      icon: "warning",
+      showDenyButton: true,
+      denyButtonText: "NO",
+      confirmButtonText: "SI",
+      confirmButtonColor: "#1CC805",
+    }).then((response) => {
+      if (response.isConfirmed) {
+        getAux(data);
+        navigate("/");
+        Swal.fire("Registro guardado", "Exito", "success");
+      } else {
+        Swal.fire("Operacion Cancelada","", "info");
+        navigate("/");
+      }
+    });
+
+    
+    
   };
 
   let getAux = (formData) => {
@@ -36,7 +56,7 @@ const CardCreation = () => {
           deleted: false,
         };
         if (locations.length !== 0) {
-         locationNew.id = locations[locations.length -1 ].id + 1;
+          locationNew.id = locations[locations.length - 1].id + 1;
         }
         setTarjeta([...locations, locationNew]);
         navigate("/");
@@ -56,23 +76,29 @@ const CardCreation = () => {
             required: "Debe ingresar un nombre",
           })}
         />
-        <p>{errors.locationName?.message}</p>
+        <p className="errors__show">{errors.locationName?.message}</p>
         <input
-          type="text"
+          type="number"
+          step="any"
           placeholder="Latitude"
           {...register("locationlatitude", {
-            required: "Debe ingresar una lalitud",
+            required: "Debe ingresar una lalitud entre -90 y 90",
+            min: -90,
+            max: 90,
           })}
         />
-        <p>{errors.locationlatitude?.message}</p>
+        <p className="errors__show">{errors.locationlatitude?.message}</p>
         <input
-          type="text"
+          type="number"
+          step="any"
           placeholder="Longitude"
           {...register("locationlongitude", {
-            required: "Debe ingresar una longitud",
+            required: "Debe ingresar una longitud entre -180 y 180",
+            min: -180,
+            max: 180,
           })}
         />
-        <p>{errors.locationlongitude?.message}</p>
+        <p className="errors__show">{errors.locationlongitude?.message}</p>
         <input
           type="text"
           placeholder="Ingresar URL de imagen"
@@ -80,7 +106,7 @@ const CardCreation = () => {
             required: "Ingresar URL de imagen",
           })}
         />
-        <p>{errors.imagen?.message}</p>
+        <p className="errors__show">{errors.imagen?.message}</p>
         <button className="btn-form" type="submit">
           Crear Ubicación
         </button>

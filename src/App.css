@@ -7,3 +7,8 @@
 header {
   padding: 50px;
 }
+.errors__show{
+  color: red;
+  font-size: 0.8rem;
+  font-style: italic;
+}
