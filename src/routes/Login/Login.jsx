@@ -16,6 +16,10 @@ const Login = () => {
     navigate('/')
   }
 
+  const handleSignOut = () => {
+    navigate("/");
+  };
+
   return (
     <div className='sign-in-container'>
       <span>Ingresa con tu usuario y contraseña</span>
@@ -43,7 +47,14 @@ const Login = () => {
           }
         />
         <p className="errors__show">{errors.password?.message}</p>
-         <button className='btn-form' type='submit'>Iniciar Sesión</button>
+        <div className="buttons">
+          <span className="nav-link-cancel" onClick={handleSignOut}>
+            Cancelar
+          </span>
+          <button className='btn-form' type='submit'>
+            Iniciar Sesión
+          </button>
+        </div>      
       </form>
     </div>
   )

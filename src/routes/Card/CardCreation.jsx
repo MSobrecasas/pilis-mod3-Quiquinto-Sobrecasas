@@ -5,6 +5,7 @@ import { LocationContext } from "../../contexts/LocationContext";
 import { getClima } from "../../service";
 import "./CardCreation.css";
 import Swal from "sweetalert2";
+
 const CardCreation = () => {
   const { locations, setTarjeta } = useContext(LocationContext); //context
   const navigate = useNavigate();
@@ -37,9 +38,6 @@ const CardCreation = () => {
         navigate("/");
       }
     });
-
-    
-    
   };
 
   let getAux = (formData) => {
@@ -62,6 +60,10 @@ const CardCreation = () => {
         navigate("/");
       })
       .catch((err) => console.log(err));
+  };
+
+  const handleSignOut = () => {
+    navigate("/");
   };
 
   return (
@@ -107,9 +109,14 @@ const CardCreation = () => {
           })}
         />
         <p className="errors__show">{errors.imagen?.message}</p>
-        <button className="btn-form" type="submit">
-          Crear Ubicación
-        </button>
+        <div className="buttons">
+          <span className="nav-link-cancel" onClick={handleSignOut}>
+            Cancelar
+          </span>        
+          <button className="btn-form" type="submit">
+            Crear Ubicación
+          </button>
+        </div>
       </form>
     </div>
   );

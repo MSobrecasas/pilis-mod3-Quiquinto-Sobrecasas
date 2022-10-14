@@ -83,11 +83,23 @@
   border-radius: 5px;
 }
 
-
- .border{
+.border{
   border: 1px solid black;
- }
+}
 
+.btn-back{
+  background-color: black;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  width: 180px;
+  height: 20px;
+  padding: 5px 30px;
+  margin-top: 15px;
+}
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .titles__container{

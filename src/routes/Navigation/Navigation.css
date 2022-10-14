@@ -17,11 +17,8 @@
 }
 
 .nav-links-container {
-  width: 50%;
-  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  margin-top: 60px;
 }
 
 .nav-link-deshabilitado {
@@ -76,6 +73,20 @@
   visibility: hidden;
 }
 
+.text-user{
+  width: 150%;
+  height: 100%;
+  padding: 18px 50px;
+}
+
+.input-user{
+  text-align:center;
+  color: black;
+  font-weight:bold;
+  font-size: 14px;
+  padding: 30px 50px;
+  width: 80px;
+}
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .show {
@@ -156,7 +167,6 @@
     opacity: 0;
     visibility: hidden;
     transition: 0.4s ease-in-out;
-
   }
 
   .nav-link-habilitado, .nav-link-cerar, .nav-link-deshabilitado, .sign-in {
@@ -180,7 +190,4 @@
     padding-top: 2rem;
     font-weight: bold;
   }
-
-
-
 }

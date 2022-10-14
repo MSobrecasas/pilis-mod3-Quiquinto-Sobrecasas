@@ -16,6 +16,7 @@
   padding: 0;
   margin: 1rem 0;
 }
+
 .weather__img{
   width:80%;
   border-radius: 5px;
@@ -24,6 +25,7 @@
 .icon__display .weather__icon__icon{
   font-size: 3rem;
 }
+
 .icon__display .weather__icon small{
   font-size: 0.75rem;
 }

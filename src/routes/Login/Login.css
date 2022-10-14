@@ -20,24 +20,47 @@
 .input-form:focus {
     outline: none;
 }
-  
-.btn-form {
+
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(2,1fr); 
+}
+
+.nav-link-cancel {
     min-width: 165px;
     width: auto;
-    height: 50px;
+    height: 40px;
     border-radius: 5px;
     letter-spacing: 0.5px;
-    line-height: 50px;
-    padding: 0 35px 0 35px;
-    font-size: 15px;
+    line-height: 40px;
+    font-size: 1rem;
     border-radius: 30px;
     color: white;
     font-weight: bolder;
-    border: none;
     cursor: pointer;
     display: flex;
     justify-content: center;
     margin-top: 25px;
     background-color: var(--secondary-color-darker);
-    font-weight:700;
-} 
+    margin-inline: 10px;
+    padding: 0px 0px;
+}
+  
+.btn-form {
+    min-width: 165px;
+    width: auto;
+    height: 40px;
+    border-radius: 5px;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+    font-size: 1rem;
+    border-radius: 30px;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    background-color: var(--secondary-color-darker);
+}

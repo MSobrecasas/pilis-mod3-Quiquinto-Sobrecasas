@@ -59,15 +59,15 @@ const Location = ({ location }) => {
         <div className="img__container">
           <img className="weather__img" src={imagen} alt="img" />
         </div>
-      </div>
-      <div className="location-actions">
-        <Link className="btn-see-more" to={`/location/${id}`}>
-          Ver más
-        </Link>
-        <div className="delete" onClick={handleLocation}>
-          {/* podrimos mostrar un mensaje */}
-          <GoTrashcan />
-        </div>        
+        <div className="location-actions">
+          <Link className="btn-see-more" to={`/location/${id}`}>
+            VER MAS
+          </Link>
+          <div className="delete" onClick={handleLocation}>
+            {/* podrimos mostrar un mensaje */}
+            <GoTrashcan />
+          </div>        
+        </div>
       </div>
     </div>
   );

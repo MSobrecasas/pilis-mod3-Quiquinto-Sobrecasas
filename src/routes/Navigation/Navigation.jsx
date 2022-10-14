@@ -48,32 +48,41 @@ const Navigation = () => {
               />
             )}
           </div>
-          <div className={`links ${isNavOpen ? "show" : ""}`}>
-            {
-              isNavOpen ? (
-                <div className="menu__title"> Menu </div>
-              ): (
-                console.log("cerradp")
-              )
+          <div className="group-user">
+            <div className={`links ${isNavOpen ? "show" : ""}`}>
+              {
+                isNavOpen ? (
+                  <div className="menu__title"> Menu </div>
+                ): (
+                  console.log("cerradp")
+                )
+              } 
+              {currentUser ? (
+                <Link className="nav-link-habilitado" to="/location/create">
+                  Nueva Ubicación
+                </Link>
+              ) : (
+                <span className="nav-link-deshabilitado">Nueva Ubicación</span>
+              )}
 
-            } 
-            {currentUser ? (
-              <Link className="nav-link-habilitado" to="/location/create">
-                Nueva Ubicación
-              </Link>
-            ) : (
-              <span className="nav-link-deshabilitado">Nueva Ubicación</span>
-            )}
+              {currentUser ? (
+                <span className="nav-link-cerar" onClick={handleSignOut}>
+                  Cerrar Sesión
+                </span>
+              ) : (
+                <Link className="nav-link sign-in" to="/login">
+                  Iniciar Sesión
+                </Link>
+              )}
+            </div>
 
-            {currentUser ? (
-              <span className="nav-link-cerar" onClick={handleSignOut}>
-                Cerrar Sesión
-              </span>
-            ) : (
-              <Link className="nav-link sign-in" to="/login">
-                Iniciar Sesión
-              </Link>
-            )}
+            <div className="text-user">
+              {currentUser ? (
+                <input className="input-user" type="text" value={currentUser.username} disabled/>
+              ) : (
+                <input type="text" value={""}/>
+              )}
+            </div>
           </div>
         </div>
       </div>

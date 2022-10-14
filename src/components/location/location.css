@@ -5,6 +5,7 @@
   height: 340px;
   width: 280px;
   box-shadow: inset 0 0 10px 2px var(--primary-color-lighter);
+  margin-top: 5px;
 }
 
 .location {
@@ -28,7 +29,7 @@
   /* font-style: italic; */
   justify-content: center;
   margin-top: 2px;
-  font-weight:bold;
+  font-weight: bold;
   color: var(--primary-color-darker);
 } 
 
@@ -56,15 +57,30 @@ h3 {
 
 .location-actions{
   display: grid;
+  grid-template-columns: repeat(2,1fr); 
+  padding:0 40px;
+}
+
+.btn-see-more{
+  background-color: black;
+  border-radius: 15px;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  width: 180px;
+  height: 20px;
+  padding: 5px 0px;
+  margin-top: 15px;
 }
 
 .delete{
-  display:flex;
-  width: 280px;
-  padding: 0px 0px 0px 230px;
+  padding: 5px 0px;
+  width: 40px;
+  font-size: 20px;
 }
 
 .delete:hover {
   cursor: pointer;
-  height: 23px;
 }
