@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/pilis-mod3-Quiquinto-Sobrecasas/static/css/main.5ec00da4.css",
+    "main.js": "/pilis-mod3-Quiquinto-Sobrecasas/static/js/main.5a559b08.js",
+    "static/js/787.01f48bee.chunk.js": "/pilis-mod3-Quiquinto-Sobrecasas/static/js/787.01f48bee.chunk.js",
+    "static/media/logo.png": "/pilis-mod3-Quiquinto-Sobrecasas/static/media/logo.7dea1ec8534b9934dfb2.png",
+    "index.html": "/pilis-mod3-Quiquinto-Sobrecasas/index.html",
+    "main.5ec00da4.css.map": "/pilis-mod3-Quiquinto-Sobrecasas/static/css/main.5ec00da4.css.map",
+    "main.5a559b08.js.map": "/pilis-mod3-Quiquinto-Sobrecasas/static/js/main.5a559b08.js.map",
+    "787.01f48bee.chunk.js.map": "/pilis-mod3-Quiquinto-Sobrecasas/static/js/787.01f48bee.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5ec00da4.css",
+    "static/js/main.5a559b08.js"
+  ]
+}
