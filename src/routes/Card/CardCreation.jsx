@@ -68,7 +68,7 @@ const CardCreation = () => {
 
   return (
     <div className="location-new-container">
-      <span>Crea una nueva ubicación</span>
+      <span><strong>Crea una nueva ubicación</strong></span>
       <form className="location-form" onSubmit={handleSubmit(onSubmit)}>
         <input
           className="input-location-name-form"

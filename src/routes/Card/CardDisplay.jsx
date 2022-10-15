@@ -5,13 +5,14 @@ import "./CardDisplay.css";
 import WeatherForecast from "../../components/location/WeatherForecast";
 import WeatherIcon from "../../components/location/WeatherIcon";
 import { FaWind } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const CardDisplay = () => {
   const { id } = useParams();
   const { locations } = useContext(LocationContext);
   const [weather] = locations.filter((weather) => weather.id === Number(id));
 
-  const [forecasts, setForecasts] = useState([]);
+  const [forecasts] = useState([]);
 
   const setForecast = (forecastData) => {
     for (let i = 0; i < 7; i++) {
@@ -59,9 +60,15 @@ const CardDisplay = () => {
           <WeatherForecast key={forecast.id} forecast={forecast} />
         ))}
       </div>
-      <Link className="btn-back" to="/">
-        Volver al Inicio
-      </Link>
+      <motion.div
+        className="button__container"
+        whileHover={{ scale: 1.3 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <Link className="btn-back" to="/">
+          Volver al Inicio
+        </Link>
+      </motion.div>
     </section>
   );
 };

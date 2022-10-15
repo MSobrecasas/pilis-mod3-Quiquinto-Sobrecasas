@@ -3,7 +3,8 @@
   grid-template-columns: repeat(4, 1fr);
   margin: 2rem;
   gap: 4rem;
-  padding: 0 3rem;
+  padding: 0 2rem 3rem 1.5rem;
+  border-bottom: 2px solid var(--primary-color-darker);
 }
 
 .current__weather {
@@ -99,6 +100,10 @@
   height: 20px;
   padding: 5px 30px;
   margin-top: 15px;
+}
+
+.button__container{
+  padding: 5rem 0;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {

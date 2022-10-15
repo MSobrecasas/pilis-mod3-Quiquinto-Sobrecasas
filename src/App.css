@@ -2,6 +2,7 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  max-width: 1200px;
 }
 
 header {
@@ -11,4 +12,15 @@ header {
   color: red;
   font-size: 0.8rem;
   font-style: italic;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+
+}
+/* SMALL DEVICES*/
+@media screen and (min-width: 280px) and (max-width: 767px) {
+
+
 }

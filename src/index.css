@@ -37,6 +37,10 @@ body {
 }
 
 
+.border{
+  border: 1px solid black;
+}
+
 .main-container {
   display: flex;
   flex-direction: row;

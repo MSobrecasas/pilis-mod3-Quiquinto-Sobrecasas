@@ -3,7 +3,7 @@ import "./WeatherForecast.css";
 import WeatherIcon from "./WeatherIcon";
 
 const WeatherForecast = ({ forecast }) => {
-  const { id, temp_min, temp_max, time, weathercode } = forecast;
+  const { temp_min, temp_max, time, weathercode } = forecast;
 
   return (
     <article className="forecast__card">

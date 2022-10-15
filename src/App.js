@@ -1,17 +1,15 @@
 import './App.css';
 import {Routes, Route} from 'react-router-dom' 
-import { useContext, useEffect,useState } from 'react'; 
-import { getClima } from './service';  //Api
-import { LocationContext} from './contexts/LocationContext'; //context
 import Home from './routes/Home/Home';
 import CardDisplay from './routes/Card/CardDisplay';
 import CardCreation from './routes/Card/CardCreation';
 import Navigation from './routes/Navigation/Navigation';
 import Login from './routes/Login/Login';
+import { motion } from 'framer-motion';
 
 function App() {  
   return ( 
-    <div className='App'>
+    <motion.div className='App'>
       <Routes>
         <Route path='/' element={<Navigation/>}> 
           <Route index element={<Home/>}/>
@@ -20,7 +18,7 @@ function App() {
           <Route path='/location/:id' element={<CardDisplay/>}/>
         </Route>
       </Routes>
-    </div>
+    </motion.div>
   );
 }
 
